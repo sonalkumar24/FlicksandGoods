@@ -2,7 +2,6 @@ import * as React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import { useEffect } from "react";
-import WhatshotIcon from "@mui/icons-material/Whatshot";
 import MovieIcon from "@mui/icons-material/Movie";
 import TvIcon from "@mui/icons-material/Tv";
 import Styles from "./NavBar.module.css";
@@ -33,7 +32,7 @@ export default function IconLabelTabs({ token }) {
       else if (value === 1) navigate("/series");
       else if (value === 2) navigate("/cart");
     }
-  }, [value, navigate]);
+  },[value, navigate]);
   if (!token) { return null }
   return (
     <ThemeProvider theme={theme}>

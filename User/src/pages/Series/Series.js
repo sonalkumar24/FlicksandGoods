@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import PageNumber from "../../components/PageNumber/PageNumber";
 import SingleContent from "../../components/SingleContent/SingleContent";
 import Style from "./Trending.module.css";
 import { BaseURL } from "../../global";
@@ -29,11 +28,11 @@ const Series = () => {
   }, [page]);
 
   const clickOnGenresArray = (fid) => {
-    if (fid == "all") {
+    if (fid === "all") {
       setContents(forFilter)
     }
     else {
-      let filter = forFilter.filter((item) => item?.genres_id?._id == fid)
+      let filter = forFilter.filter((item) => item?.genres_id?._id === fid)
       console.log(filter)
       setContents(filter)
     }

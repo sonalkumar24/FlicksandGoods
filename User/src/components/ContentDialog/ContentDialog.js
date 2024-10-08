@@ -4,8 +4,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Paper from "@mui/material/Paper";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Draggable from "react-draggable";
 import ContentDialogBody from "../ContentDialogBody/ContentDialogBody";
 import ContentDialogFooter from "../ContentDialogFooter/ContentDialogFooter";
@@ -24,7 +23,7 @@ function PaperComponent(props) {
 }
 
 const ContentDialog = (props) => {
-  const { open, handleClose, id, media_type, openYoutubeVideo, contents, openProduct } = props;
+  const { open, handleClose, media_type, openYoutubeVideo, contents, openProduct } = props;
   const [content, setContent] = useState(contents);
 
   // useEffect(() => {

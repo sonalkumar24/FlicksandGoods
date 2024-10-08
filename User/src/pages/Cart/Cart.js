@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import PageComponent from "../../components/PageComponent/PageComponent";
 import CartItem from "./CartItem"; // Assuming you have a CartItem component
 import "./Cart.css";
 import axios from "axios";
@@ -27,7 +26,6 @@ const Cart = () => {
     const [open, setOpen] = useState(false);
     const [open2, setOpen2] = useState(false);
     const [paymentType, setPaymentType] = useState('cash');
-    const [transactionId, setTransactionId] = useState('');
     const [orders, setOrders] = useState([]);
     const [details, setDetails] = useState({ payment_type: "cash" });
 

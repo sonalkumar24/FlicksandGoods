@@ -3,10 +3,8 @@ import CloseIcon from "@mui/icons-material/Close";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
-import YouTube from "react-youtube";
 import Styles from './SingleContent.module.css';
 import { unavailable } from "../../config/config";
-import { Badge } from "@mui/material";
 import { useEffect, useState } from "react";
 import { BaseURL } from "../../global";
 import axios from "axios";
@@ -15,7 +13,7 @@ import toast from 'react-hot-toast';
 
 
 const Products = (props) => {
-    const { open, handleClose, youtubeURL, id } = props;
+    const { open, handleClose, id } = props;
     const [products, setProducts] = useState([]);
 
     useEffect(() => {

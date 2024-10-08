@@ -1,7 +1,6 @@
 import Badge from "@mui/material/Badge";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { img_300, unavailable } from "../../config/config";
+import { useState } from "react";
+import { unavailable } from "../../config/config";
 import ContentDialog from "../ContentDialog/ContentDialog";
 import YoutubeVideo from "../YoutubeVideo/YoutubeVideo";
 import Product from "../Products/Products";
@@ -13,13 +12,12 @@ import toast from "react-hot-toast";
 
 const SingleContent = (props) => {
   const { content } = props;
-  const { _id, genres_id, name, movie_details, photo, video, release_date, actor_name, ratings, media_type } = content
+  const { _id, name, photo, video, release_date, ratings, media_type } = content
   const date = moment(release_date).format('D-M-Y')
 
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isYoutubeDialogOpen, setIsYoutubeDialogOpen] = useState(false);
   const [isProductDialogOpen, setIsProductDialogOpen] = useState(false);
-  const [youtubeURL, setYoutubeURL] = useState("");
 
   let nav = useNavigate()
   const ClickOpenDialog = () => {

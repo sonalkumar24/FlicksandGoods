@@ -2,7 +2,6 @@ import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Trending from "./pages/Trending/Trending";
-import Movies from "./pages/Movies/Movies";
 import Series from "./pages/Series/Series";
 import Cart from "./pages/Cart/Cart";
 import "./App.css";
@@ -18,8 +17,7 @@ function App() {
     if (tok) {
       setToken(tok)
     }
-
-  })
+  },[]);
   console.log(token,"token")
   return (
     <>
