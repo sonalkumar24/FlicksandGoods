@@ -1,0 +1,49 @@
+.tagline {
+  display: flex;
+  justify-content: center;
+}
+.poster_image {
+  object-fit: contain;
+  width: 100%;
+  border-radius: 3%;
+}
+.description {
+  display: flex;
+  height: 40%;
+}
+
+.actor_name {
+  display: flex;
+  height: 40%;
+}
+
+.commentSection {
+  margin-top: 20px;
+}
+
+.commentInput {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.commentButton {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.commentsList {
+  margin-top: 20px;
+}
+
+.comment {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
