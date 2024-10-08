@@ -32,7 +32,7 @@ export default function IconLabelTabs({ token }) {
       else if (value === 1) navigate("/series");
       else if (value === 2) navigate("/cart");
     }
-  },[value, navigate]);
+  },[value, navigate, token]);
   if (!token) { return null }
   return (
     <ThemeProvider theme={theme}>
