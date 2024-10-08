@@ -1,1 +1,1 @@
-export const base_URL = "http://localhost:5005/api"
+export const base_URL = "https://flicksandgoods-backend.onrender.com"
