@@ -6,7 +6,8 @@ import { CSpinner, useColorModes } from '@coreui/react'
 import './scss/style.scss'
 
 // Containers
-const DefaultLayout = React.lazy(() => import('./layout/DefaultLayout'))
+// const DefaultLayout = React.lazy(() => import('./layout/DefaultLayout'))
+import DefaultLayout from './layout/DefaultLayout';
 
 // Pages
 const Login = React.lazy(() => import('./views/pages/login/Login'))
@@ -35,6 +36,7 @@ const App = () => {
   const [token, setToken] = useState(false)
   useEffect(() => {
     let tok = localStorage.getItem('token')
+    console.log('Token retrieved:', tok);
     if (tok) { setToken(tok) }
   }, [])
 
@@ -48,7 +50,6 @@ const App = () => {
         }
       >
         <Routes>
-
           {!token ? (
             <>
               <Route path="/login" name="Login Page" element={<Login setToken={setToken} />} />
