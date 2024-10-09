@@ -136,7 +136,7 @@ const Cart = () => {
         axios.post(`${BaseURL}/order/insert`, data, { headers: { 'auth-token': token } })
             .then((res) => {
                 if (res.data.success) {
-                    toast.succes("Order successful")
+                    toast.success("Order successful")
                     setChange(false)
                     handleClose()
                 } else {
