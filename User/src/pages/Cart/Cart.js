@@ -36,6 +36,11 @@ const Cart = () => {
 
     useEffect(() => {
         let token = localStorage.getItem('token');
+        if (!token) {
+            toast.error("Please log in to view your cart.");
+            return; // Exit early if no token is found
+        }
+        
         axios.get(`${BaseURL}/cart/get`, { headers: { 'auth-token': token } })
             .then((res) => {
                 if (res.data.success) {
@@ -143,6 +148,11 @@ const Cart = () => {
                     setChange(false)
                     toast.error("Something went wrong");
                 }
+            })
+            .catch((error) => {
+                console.error("Error submitting order:", error);
+                toast.error("Error submitting order");
+                setChange(false);
             });
     }
 

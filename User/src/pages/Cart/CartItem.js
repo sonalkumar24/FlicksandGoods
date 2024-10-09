@@ -10,8 +10,6 @@ const CartItem = ({ item, onUpdateQuantity, handleDelete }) => {
   };
 
 
-
-
   return (
     <div className="cart-item">
       <img
