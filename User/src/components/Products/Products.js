@@ -95,7 +95,10 @@ const Products = (props) => {
                     ) : null}
                 </DialogTitle>
                 <DialogContent component="span">
-                    {products.map((pro) => (
+                    {products.length === 0 ? (
+                        <p>Products currently unavailable.</p>
+                    ) : (
+                    products.map((pro) => (
                         <div style={{ display: "flex", marginBottom: "20px" }} key={pro._id}>
                             <div style={{ flex: 1 }} className={`${Styles.post} ${Styles.productContainer}`}>
                                 <img
@@ -128,7 +131,8 @@ const Products = (props) => {
                             </div>
                         </div>
                     
-                    ))}
+                    ))
+                    )}
                 </DialogContent>
             </Dialog>
         </div>
