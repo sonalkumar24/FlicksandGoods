@@ -16,6 +16,7 @@ import {
 import CIcon from '@coreui/icons-react'
 import { cilLockLocked, cilUser } from '@coreui/icons'
 import axios from 'axios'
+import { base_URL } from '../../../global'
 
 const Login = ({ setToken }) => {
   let nav = useNavigate()

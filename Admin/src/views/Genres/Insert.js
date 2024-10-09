@@ -12,6 +12,7 @@ import {
   CRow,
 } from '@coreui/react'
 import { useNavigate } from 'react-router-dom'
+import { base_URL } from '../../global'
 
 const FormControl = () => {
     let nav = useNavigate()
