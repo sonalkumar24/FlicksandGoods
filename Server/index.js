@@ -10,7 +10,9 @@ const express = require('express')
 const app = express()
 
 app.use(cors({
-    origin: 'https://flicksngoods.netlify.app'
+    origin: ['https://flicksngoods.netlify.app','https://flicksand-goods-admin.vercel.app'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
 }))
 
 app.use(express.json())
