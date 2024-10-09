@@ -10,7 +10,6 @@ import {
   CFormInput,
   CFormLabel,
   CFormSelect,
-  CFormTextarea,
   CRow,
 } from '@coreui/react'
 import { useNavigate } from 'react-router-dom'

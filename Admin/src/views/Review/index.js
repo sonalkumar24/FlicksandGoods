@@ -65,10 +65,6 @@ const Tables = () => {
                       <CTableDataCell><textarea name="" id="" style={{height:"100px"}}>{item.message}</textarea></CTableDataCell>
                       <CTableDataCell>{moment(item.date).format("L")}</CTableDataCell>
 
-
-                      {/* <CTableDataCell>
-                        <CButton onClick={() => handleDelete(item._id)} color='danger'>Delete</CButton>
-                      </CTableDataCell> */}
                     </CTableRow>
                   )
                 })}

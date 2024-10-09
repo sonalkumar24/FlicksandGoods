@@ -17,7 +17,6 @@ import {
   CRow,
   CTable,
   CTableBody,
-  CTableCaption,
   CTableDataCell,
   CTableHead,
   CTableHeaderCell,
@@ -98,16 +97,6 @@ const Tables = () => {
                   onChange={handleChange}
                   required
                 />
-                {/* <CFormLabel htmlFor="Input3">Photo</CFormLabel>
-                <CFormInput
-                  value={newProducts.photo}
-                  type="text"
-                  name="photo"
-                  id="Input3"
-                  placeholder="Add Photo"
-                  onChange={handleChange}
-
-                /> */}
                 <CFormLabel htmlFor="Input4">Price</CFormLabel>
                 <CFormInput
                   value={newProducts.price}

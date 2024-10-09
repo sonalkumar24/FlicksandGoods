@@ -65,11 +65,6 @@ const Orders = React.lazy(() => import('./views/Orders'))
 const Payment = React.lazy(() => import('./views/Payment'))
 const Review = React.lazy(() => import('./views/Review'))
 
-
-
-
-
-
 const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
 
 const routes = [
