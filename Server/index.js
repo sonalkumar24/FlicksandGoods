@@ -9,8 +9,22 @@ const express = require('express')
 
 const app = express()
 
+const allowedOrigins = [
+    'https://flicksngoods.netlify.app',
+    'https://adminflicksngoods.netlify.app' // Replace with your admin app's URL
+];
+
 app.use(cors({
-    origin: 'https://flicksngoods.netlify.app'
+    origin: (origin, callback) => {
+        // Allow requests with no origin (like mobile apps or Postman)
+        if (!origin) return callback(null, true);
+        
+        if (allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    }
 }));
 
 app.use(express.json())
