@@ -26,19 +26,6 @@ const ContentDialog = (props) => {
   const { open, handleClose, media_type, openYoutubeVideo, contents, openProduct } = props;
   const [content, setContent] = useState(contents);
 
-  // useEffect(() => {
-  //   const fetchContentData = async () => {
-  //     const { data } = await axios.get(
-  //       `https://api.themoviedb.org/3/${media_type}/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
-  //     );
-  //     setContent(data);
-  //     // console.log(data);
-  //   };
-
-  //   fetchContentData();
-  // }, [media_type, id]);
-  console.log(content, 111)
-
   return (
     <div>
       <Dialog

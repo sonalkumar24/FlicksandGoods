@@ -40,7 +40,6 @@ const Cart = () => {
             toast.error("Please log in to view your cart.");
             return; // Exit early if no token is found
         }
-        
         axios.get(`${BaseURL}/cart/get`, { headers: { 'auth-token': token } })
             .then((res) => {
                 if (res.data.success) {
