@@ -12,14 +12,18 @@ const CartItem = ({ item, onUpdateQuantity, handleDelete }) => {
 
   return (
     <div className="cart-item">
-      <img
-        style={{ height: "100px", width: "100px" }}
-        src={`${BaseURL}/productImages/${item.product_id.photo}`}
-        alt={item.product_id.name}
-        className="cart-item-image"
-      />
+      {item.product_id && item.product_id.photo ? (
+        <img
+          style={{ height: "100px", width: "100px" }}
+          src={`${BaseURL}/productImages/${item.product_id.photo}`}
+          alt={item.product_id.name}
+          className="cart-item-image"
+        />
+      ) : (
+        <p>No Image Available</p>
+      )}
       <div className="cart-item-details">
-        <h3>{item.product_id.name}</h3>
+        <h3>{item.product_id ? item.product_id.name : "Unknown Product"}</h3>
         <p>Price: Rs. {item.amount}</p>
         <p>
           Quantity:
