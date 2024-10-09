@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import moment from 'moment'
 import {
   CButton,
   CCard,
@@ -34,7 +33,7 @@ const FormControl = () => {
     formData.append("ratings", trailers.ratings)
     formData.append("media_type", trailers.media_type)
 
-    axios.post("http://localhost:5005/api/trailers/insert", formData)
+    axios.post(`${base_URL}/trailers/insert`, formData)
       .then((res) => {
         console.log(res)
         if (res.data.success) {
@@ -51,7 +50,7 @@ const FormControl = () => {
   }
   const [genres, setGenres] = useState([])
   useEffect(() => {
-    axios.get("http://localhost:5005/api/genres/get")
+    axios.get(`${base_URL}/genres/get`)
       .then((res) => {
         console.log(res)
         setGenres(res.data.genres)

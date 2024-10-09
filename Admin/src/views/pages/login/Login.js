@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import {
   CButton,
   CCard,
@@ -22,7 +22,7 @@ const Login = ({ setToken }) => {
   const [login_details, setLogin_details] = useState({})
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post(`http://localhost:5005/api/admin/login`, login_details)
+    axios.post(`${base_URL}/admin/login`, login_details)
       .then((res) => {
         console.log(res, 1111)
         if (res.data.success) {

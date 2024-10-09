@@ -29,7 +29,7 @@ const FormControl = () => {
     formData.append("color", products.color)
     formData.append("size", products.size)
 
-    axios.post("http://localhost:5005/api/products/insert", formData)
+    axios.post(`${base_URL}/products/insert`, formData)
       .then((res) => {
         console.log(res)
         if (res.data.success) {
@@ -47,7 +47,7 @@ const FormControl = () => {
 
   const [trailers, setTrailers] = useState([])
   useEffect(() => {
-    axios.get("http://localhost:5005/api/trailers/get/all")
+    axios.get(`${base_URL}/trailers/get/all`)
       .then((res) => {
         console.log(res)
         setTrailers(res.data.trailers)

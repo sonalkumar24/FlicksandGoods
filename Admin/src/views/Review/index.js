@@ -1,29 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import {
-  CButton,
   CCard,
   CCardBody,
   CCardHeader,
   CCol,
-  CForm,
-  CFormInput,
-  CFormLabel,
-  CModal,
-  CModalBody,
-  CModalFooter,
-  CModalHeader,
-  CModalTitle,
   CRow,
   CTable,
   CTableBody,
-  CTableCaption,
   CTableDataCell,
   CTableHead,
   CTableHeaderCell,
   CTableRow,
 } from '@coreui/react'
-import { DocsExample } from 'src/components'
 import { useNavigate } from 'react-router-dom'
 import { base_URL } from '../../global'
 import moment from 'moment'

@@ -9,7 +9,6 @@ import {
   CForm,
   CFormInput,
   CFormLabel,
-  CFormTextarea,
   CRow,
 } from '@coreui/react'
 import { useNavigate } from 'react-router-dom'
@@ -19,7 +18,7 @@ const FormControl = () => {
     const [genres,setGenres]=useState("")
     const handleSubmit =(e)=>{
         e.preventDefault()
-        axios.post("http://localhost:5005/api/genres/insert",{name:genres})
+        axios.post(`${base_URL}/genres/insert`,{name:genres})
         .then((res)=>{
             console.log(res)
             if(res.data.success){

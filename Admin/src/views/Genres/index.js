@@ -17,13 +17,11 @@ import {
   CRow,
   CTable,
   CTableBody,
-  CTableCaption,
   CTableDataCell,
   CTableHead,
   CTableHeaderCell,
   CTableRow,
 } from '@coreui/react'
-import { DocsExample } from 'src/components'
 import { useNavigate } from 'react-router-dom'
 
 const Tables = () => {
@@ -31,7 +29,7 @@ const Tables = () => {
   const [genres,setGenres]=useState([])
   const [change,setChange] = useState(false)
   useEffect(()=>{
-    axios.get("http://localhost:5005/api/genres/get")
+    axios.get(`${base_URL}/genres/get`)
     .then((res)=>{
       console.log(res,111111)
       setGenres(res.data.genres)
@@ -50,7 +48,7 @@ const Tables = () => {
 
     const handleEdit=()=>{
       setChange(true)
-      axios.put(`http://localhost:5005/api/genres/update/${newGenres._id}`,{name:newGenres.name})
+      axios.put(`${base_URL}/genres/update/${newGenres._id}`,{name:newGenres.name})
       .then((res)=>{
         if(res.data.success){
           alert("Genre updated successfully")          
@@ -104,7 +102,7 @@ const Tables = () => {
     )
   }
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:5005/api/genres/delete/${id}`)
+    axios.delete(`${base_URL}/genres/delete/${id}`)
       .then((res) => {
         if (res.data.success) {
           alert("Genre deleted successfully")

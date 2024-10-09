@@ -34,7 +34,7 @@ const Tables = () => {
   const [change, setChange] = useState(false)
 
   useEffect(() => {
-    axios.get("http://localhost:5005/api/trailers/get/all")
+    axios.get(`${base_URL}/trailers/get/all`)
       .then((res) => {
         console.log(res, 111111)
         setTrailers(res?.data?.trailers)
@@ -47,7 +47,7 @@ const Tables = () => {
 
   const [genres, setGenres] = useState([])
   useEffect(() => {
-    axios.get("http://localhost:5005/api/genres/get")
+    axios.get(`${base_URL}/genres/get`)
       .then((res) => {
         console.log(res)
         setGenres(res.data.genres)

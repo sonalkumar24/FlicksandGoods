@@ -6,24 +6,14 @@ import {
   CCardBody,
   CCardHeader,
   CCol,
-  CForm,
-  CFormInput,
-  CFormLabel,
-  CModal,
-  CModalBody,
-  CModalFooter,
-  CModalHeader,
-  CModalTitle,
   CRow,
   CTable,
   CTableBody,
-  CTableCaption,
   CTableDataCell,
   CTableHead,
   CTableHeaderCell,
   CTableRow,
 } from '@coreui/react'
-import { DocsExample } from 'src/components'
 import { useNavigate } from 'react-router-dom'
 import { base_URL } from '../../global'
 import moment from 'moment'
@@ -46,7 +36,7 @@ const Tables = () => {
   let nav = useNavigate()
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:5005/api/user/delete/${id}`)
+    axios.delete(`${base_URL}/user/delete/${id}`)
       .then((res) => {
         if (res.data.success) {
           alert("User deleted successfully")
