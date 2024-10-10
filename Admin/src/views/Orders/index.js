@@ -130,7 +130,7 @@ const OrdersTable = () => {
                                   <CTableDataCell>
                                     <img style={{ height: "100px", width: "100px" }} src={product.product_id?.photo ? `${base_URL}/productImages/${product.product_id.photo}`: 'defaultImageUrl'} alt={product.product_id?.name ||'Product Image'} />
                                   </CTableDataCell>
-                                  <CTableDataCell>{product.product_id.name}</CTableDataCell>
+                                  <CTableDataCell>{product.product_id?.name}</CTableDataCell>
                                   <CTableDataCell>{product.quantity}</CTableDataCell>
                                   <CTableDataCell>{product.price}</CTableDataCell>
                                   <CTableDataCell>{(product.quantity * product.price).toFixed(2)}</CTableDataCell>
