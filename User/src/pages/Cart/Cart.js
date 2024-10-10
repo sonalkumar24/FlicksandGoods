@@ -18,7 +18,7 @@ import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow
 
 import { ExpandMore, ExpandLess } from '@mui/icons-material';
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
     const [cartItems, setCartItems] = useState([]);
@@ -133,14 +133,11 @@ const Cart = () => {
     const handleChange = (e) => {
         setDetails({ ...details, [e.target.name]: e.target.value })
     }
-
+    const navigate = useNavigate();
     const handleSubmit = () => {
         setChange(true)
         let token = localStorage.getItem('token');
-        let data = { ...details, amount: calculateTotal() }
-
-        const navigate = useNavigate();
-
+        let data = { ...details, amount: calculateTotal() };
         axios.post(`${BaseURL}/order/insert`, data, { headers: { 'auth-token': token } })
             .then((res) => {
                 if (res.data?.success) {
