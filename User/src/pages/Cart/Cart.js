@@ -43,8 +43,8 @@ const Cart = () => {
         axios.get(`${BaseURL}/cart/get`, { headers: { 'auth-token': token } })
             .then((res) => {
                 if (res.data.success) {
-                    setCartItems(res.data.cart);
-                    setOrders(res.data.orders)
+                    setCartItems(res.data?.cart);
+                    setOrders(res.data?.orders)
                 } else {
                     toast.error("Something went wrong");
                 }
@@ -139,7 +139,6 @@ const Cart = () => {
         let data = { ...details, amount: calculateTotal() }
         axios.post(`${BaseURL}/order/insert`, data, { headers: { 'auth-token': token } })
             .then((res) => {
-                console.log(res);
                 if (res.data.success) {
                     toast.success("Order successful")
                     setChange(false)
