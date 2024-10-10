@@ -139,6 +139,7 @@ const Cart = () => {
         let data = { ...details, amount: calculateTotal() }
         axios.post(`${BaseURL}/order/insert`, data, { headers: { 'auth-token': token } })
             .then((res) => {
+                console.log(res);
                 if (res.data.success) {
                     toast.success("Order successful")
                     setChange(false)
@@ -282,11 +283,11 @@ const Cart = () => {
                                                             </TableHead>
                                                             <TableBody>
                                                                 {order.product_details.map((product) => (
-                                                                    <TableRow key={product.product_id._id}>
-                                                                        <TableCell>{product.product_id.name}</TableCell>
-                                                                        <TableCell align="right">Rs.{product.product_id.price}</TableCell>
+                                                                    <TableRow key={product.product_id?._id}>
+                                                                        <TableCell>{product.product_id?.name}</TableCell>
+                                                                        <TableCell align="right">Rs.{product.product_id?.price}</TableCell>
                                                                         <TableCell align="right">{product.quantity}</TableCell>
-                                                                        <TableCell align="right">Rs.{(product.product_id.price * product.quantity).toFixed(2)}</TableCell>
+                                                                        <TableCell align="right">Rs.{(product.product_id?.price * product.quantity).toFixed(2)}</TableCell>
                                                                     </TableRow>
                                                                 ))}
                                                             </TableBody>
