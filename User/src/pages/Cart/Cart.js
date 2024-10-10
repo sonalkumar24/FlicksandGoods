@@ -18,6 +18,7 @@ import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow
 
 import { ExpandMore, ExpandLess } from '@mui/icons-material';
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router";
 
 const Cart = () => {
     const [cartItems, setCartItems] = useState([]);
@@ -137,12 +138,16 @@ const Cart = () => {
         setChange(true)
         let token = localStorage.getItem('token');
         let data = { ...details, amount: calculateTotal() }
+
+        const navigate = useNavigate();
+
         axios.post(`${BaseURL}/order/insert`, data, { headers: { 'auth-token': token } })
             .then((res) => {
                 if (res.data?.success) {
-                    toast.success("Order successful")
-                    setChange(false)
-                    handleClose()
+                    toast.success("Order successful");
+                    setChange(false);
+                    handleClose();
+                    navigate('/cart');
                 } else {
                     setChange(false)
                     toast.error("Something went wrong");
