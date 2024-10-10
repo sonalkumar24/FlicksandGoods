@@ -50,10 +50,6 @@ const Cart = () => {
                     toast.error("Something went wrong");
                 }
             })
-            .catch((error) => {
-                console.error("Error fetching cart:", error);
-                toast.error("Error fetching cart");
-            });
     }, [change]);
 
     const calculateTotal = () => {
