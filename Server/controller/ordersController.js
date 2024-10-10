@@ -2,8 +2,6 @@ const OrderSchema = require('../models/orders')
 const CartSchema = require('../models/cart')
 const shippingSchema = require('../models/shipping')
 const paymentSchema = require('../models/payment')
-const bcryptjs = require('bcryptjs')
-const jwt = require("jsonwebtoken")
 const env = require("dotenv")
 env.config()
 
@@ -61,8 +59,6 @@ const Insert = async (req, res) => {
         return res.status(500).send("Internal Server Error");
     }
 };
-
-
 
 // const Get = async (req, res) => {
 //     try {
