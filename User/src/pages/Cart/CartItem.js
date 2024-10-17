@@ -12,11 +12,11 @@ const CartItem = ({ item, onUpdateQuantity, handleDelete }) => {
 
   return (
     <div className="cart-item">
-      {item.product_id && item.product_id.photo ? (
+      {item.product_id && item.product_id?.photo ? (
         <img
           style={{ height: "100px", width: "100px" }}
-          src={`${BaseURL}/productImages/${item.product_id.photo}`}
-          alt={item.product_id.name}
+          src={`${BaseURL}/api/productImages/${item.product_id?.photo}`}
+          alt={item.product_id?.name}
           className="cart-item-image"
         />
       ) : (

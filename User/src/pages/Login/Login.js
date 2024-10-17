@@ -57,7 +57,7 @@ export default function SignInSide({ setToken }) {
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post(`${BaseURL}/user/login`, user)
+        axios.post(`${BaseURL}/api/user/login`, user)
             .then((res) => {
                 console.log(res)
                 if (res.data.success) {

@@ -48,7 +48,7 @@ export default function SignInSide() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post(`${BaseURL}/user/register`, user)
+        axios.post(`${BaseURL}/api/user/register`, user)
             .then((res) => {
                 console.log(res)
                 if (res.data.success) {

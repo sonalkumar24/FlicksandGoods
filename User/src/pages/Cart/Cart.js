@@ -41,7 +41,7 @@ const Cart = () => {
             toast.error("Please log in to view your cart.");
             return; // Exit early if no token is found
         }
-        axios.get(`${BaseURL}/cart/get`, { headers: { 'auth-token': token } })
+        axios.get(`${BaseURL}/api/cart/get`, { headers: { 'auth-token': token } })
             .then((res) => {
                 if (res.data.success) {
                     setCartItems(res?.data?.cart);
@@ -58,7 +58,7 @@ const Cart = () => {
 
     const handleDelete = (id) => {
         setChange(true);
-        axios.delete(`${BaseURL}/cart/delete/${id}`)
+        axios.delete(`${BaseURL}/api/cart/delete/${id}`)
             .then((res) => {
                 if (res.data.success) {
                     toast.success("Product removed from the cart");
@@ -77,7 +77,7 @@ const Cart = () => {
         // Prepare the data for the request
         const data = { quantity: newQuantity };
     
-        axios.put(`${BaseURL}/cart/update/${id}`, data, { headers: { 'auth-token': token } })
+        axios.put(`${BaseURL}/api/cart/update/${id}`, data, { headers: { 'auth-token': token } })
             .then((res) => {
                 if (res.data.success) {
                     toast.success("Cart updated successfully");
@@ -134,7 +134,7 @@ const Cart = () => {
         setChange(true)
         let token = localStorage.getItem('token');
         let data = { ...details, amount: calculateTotal() };
-        axios.post(`${BaseURL}/order/insert`, data, { headers: { 'auth-token': token } })
+        axios.post(`${BaseURL}/api/order/insert`, data, { headers: { 'auth-token': token } })
             .then((res) => {
                 if (res?.data?.success) {
                     toast.success("Order successful");

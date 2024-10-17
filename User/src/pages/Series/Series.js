@@ -13,7 +13,7 @@ const Series = () => {
 
   useEffect(() => {
     const fetchTrending = async () => {
-      await axios.get(`${BaseURL}/trailers/get/series`)
+      await axios.get(`${BaseURL}/api/trailers/get/series`)
         .then((res) => {
           console.log(res)
           setContents(res?.data?.trailers);

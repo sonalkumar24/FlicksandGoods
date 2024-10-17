@@ -13,7 +13,7 @@ const Trending = () => {
 
   useEffect(() => {
     const fetchTrending = async () => {
-      await axios.get(`${BaseURL}/trailers/get/movies`)
+      await axios.get(`${BaseURL}/api/trailers/get/movies`)
         .then((res) => {
           console.log(res)
           setContents(res?.data?.trailers);
