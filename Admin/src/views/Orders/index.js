@@ -31,7 +31,7 @@ const OrdersTable = () => {
   const [openOrderId, setOpenOrderId] = useState(null)
 
   useEffect(() => {
-    axios.get(`${base_URL}/order/get`)
+    axios.get(`${base_URL}/api/order/get`)
       .then((res) => {
         setOrders(res.data.orders)
         setShippings(res.data.shippings)
@@ -48,7 +48,7 @@ const OrdersTable = () => {
   }
 
   const handleStatusChange = (orderId, newStatus) => {
-    axios.put(`${base_URL}/order/update/${orderId}`, { status: newStatus })
+    axios.put(`${base_URL}/api/order/update/${orderId}`, { status: newStatus })
       .then((res) => {
         if (res.data.success) {
           setChange(!change)

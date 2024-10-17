@@ -34,7 +34,7 @@ const Tables = () => {
   const [change, setChange] = useState(false)
 
   useEffect(() => {
-    axios.get(`${base_URL}/trailers/get/all`)
+    axios.get(`${base_URL}/api/trailers/get/all`)
       .then((res) => {
         console.log(res, 111111)
         setTrailers(res?.data?.trailers)
@@ -47,7 +47,7 @@ const Tables = () => {
 
   const [genres, setGenres] = useState([])
   useEffect(() => {
-    axios.get(`${base_URL}/genres/get`)
+    axios.get(`${base_URL}/api/genres/get`)
       .then((res) => {
         console.log(res)
         setGenres(res.data.genres)
@@ -59,7 +59,7 @@ const Tables = () => {
 
   const handleDelete = (id) => {
     setChange(true)
-    axios.delete(`${base_URL}/trailers/delete/${id}`)
+    axios.delete(`${base_URL}/api/trailers/delete/${id}`)
       .then((res) => {
         if (res.data.success) {
           alert("Trailer deleted successfully")
@@ -83,7 +83,7 @@ const Tables = () => {
 
     const handleEdit = () => {
       setChange(true)
-      axios.put(`${base_URL}/trailers/update/${newTrailers._id}`, newTrailers)
+      axios.put(`${base_URL}/api/trailers/update/${newTrailers._id}`, newTrailers)
         .then((res) => {
           if (res.data.success) {
             alert("Trailer updated successfully")

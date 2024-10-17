@@ -23,7 +23,7 @@ const Tables = () => {
   const [users, setUsers] = useState([])
   const [change, setChange] = useState(false)
   useEffect(() => {
-    axios.get(`${base_URL}/user/get`)
+    axios.get(`${base_URL}/api/user/get`)
       .then((res) => {
         console.log(res, 111111)
         setUsers(res.data.user)
@@ -36,7 +36,7 @@ const Tables = () => {
   let nav = useNavigate()
 
   const handleDelete = (id) => {
-    axios.delete(`${base_URL}/user/delete/${id}`)
+    axios.delete(`${base_URL}/api/user/delete/${id}`)
       .then((res) => {
         if (res.data.success) {
           alert("User deleted successfully")

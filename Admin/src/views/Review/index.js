@@ -22,7 +22,7 @@ const Tables = () => {
   const [reviews, setReviews] = useState([])
   const [change, setChange] = useState(false)
   useEffect(() => {
-    axios.get(`${base_URL}/review/get`)
+    axios.get(`${base_URL}/api/review/get`)
       .then((res) => {
         console.log(res, 111111)
         setReviews(res.data.reviews)

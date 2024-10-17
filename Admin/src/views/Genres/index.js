@@ -30,7 +30,7 @@ const Tables = () => {
   const [genres,setGenres]=useState([])
   const [change,setChange] = useState(false)
   useEffect(()=>{
-    axios.get(`${base_URL}/genres/get`)
+    axios.get(`${base_URL}/api/genres/get`)
     .then((res)=>{
       console.log(res,111111)
       setGenres(res.data.genres)
@@ -49,7 +49,7 @@ const Tables = () => {
 
     const handleEdit=()=>{
       setChange(true)
-      axios.put(`${base_URL}/genres/update/${newGenres._id}`,{name:newGenres.name})
+      axios.put(`${base_URL}/api/genres/update/${newGenres._id}`,{name:newGenres.name})
       .then((res)=>{
         if(res.data.success){
           alert("Genre updated successfully")          
@@ -103,7 +103,7 @@ const Tables = () => {
     )
   }
   const handleDelete = (id) => {
-    axios.delete(`${base_URL}/genres/delete/${id}`)
+    axios.delete(`${base_URL}/api/genres/delete/${id}`)
       .then((res) => {
         if (res.data.success) {
           alert("Genre deleted successfully")
@@ -119,7 +119,7 @@ const Tables = () => {
   return (
     <CRow>
       <CCol xs={12}>
-        <CButton color='info' onClick={()=>nav('/genres/insert')} >Insert</CButton>
+        <CButton color='info' onClick={()=>nav('/api/genres/insert')} >Insert</CButton>
         <CCard className="mb-4">
           <CCardHeader>
             <strong>Genres</strong>

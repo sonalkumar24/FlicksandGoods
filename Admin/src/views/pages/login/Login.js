@@ -23,7 +23,7 @@ const Login = ({ setToken }) => {
   const [login_details, setLogin_details] = useState({})
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post(`${base_URL}/admin/login`, login_details)
+    axios.post(`${base_URL}/api/admin/login`, login_details)
       .then((res) => {
         console.log(res, 1111)
         if (res.data.success) {

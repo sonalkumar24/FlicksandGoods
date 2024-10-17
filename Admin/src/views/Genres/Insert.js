@@ -19,7 +19,7 @@ const FormControl = () => {
     const [genres,setGenres]=useState("")
     const handleSubmit =(e)=>{
         e.preventDefault()
-        axios.post(`${base_URL}/genres/insert`,{name:genres})
+        axios.post(`${base_URL}/api/genres/insert`,{name:genres})
         .then((res)=>{
             console.log(res)
             if(res.data.success){

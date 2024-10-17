@@ -31,7 +31,7 @@ const Tables = () => {
   const [change, setChange] = useState(false)
 
   useEffect(() => {
-    axios.get(`${base_URL}/products/get`)
+    axios.get(`${base_URL}/api/products/get`)
       .then((res) => {
         console.log(res, 111111)
         setProducts(res.data.products)
@@ -49,7 +49,7 @@ const Tables = () => {
 
     const handleEdit = () => {
       setChange(true)
-      axios.put(`${base_URL}/products/update/${newProducts._id}`, newProducts)
+      axios.put(`${base_URL}/api/products/update/${newProducts._id}`, newProducts)
         .then((res) => {
           if (res.data.success) {
             alert("Product updated successfully")
@@ -154,7 +154,7 @@ const Tables = () => {
 
   const handleDelete = (id) => {
     setChange(true)
-    axios.delete(`${base_URL}/products/delete/${id}`)
+    axios.delete(`${base_URL}/api/products/delete/${id}`)
       .then((res) => {
         if (res.data.success) {
           alert("Product deleted successfully")

@@ -34,7 +34,7 @@ const FormControl = () => {
     formData.append("ratings", trailers.ratings)
     formData.append("media_type", trailers.media_type)
 
-    axios.post(`${base_URL}/trailers/insert`, formData)
+    axios.post(`${base_URL}/api/trailers/insert`, formData)
       .then((res) => {
         console.log(res)
         if (res.data.success) {
@@ -51,7 +51,7 @@ const FormControl = () => {
   }
   const [genres, setGenres] = useState([])
   useEffect(() => {
-    axios.get(`${base_URL}/genres/get`)
+    axios.get(`${base_URL}/api/genres/get`)
       .then((res) => {
         console.log(res)
         setGenres(res.data.genres)

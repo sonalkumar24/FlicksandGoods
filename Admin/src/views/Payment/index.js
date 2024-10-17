@@ -24,7 +24,7 @@ const PaymentsTable = () => {
   const [change, setChange] = useState(false)
 
   useEffect(() => {
-    axios.get(`${base_URL}/payments/get`)
+    axios.get(`${base_URL}/api/payments/get`)
       .then((res) => {
         setPayments(res.data.payments)
       })
