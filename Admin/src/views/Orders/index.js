@@ -128,7 +128,7 @@ const OrdersTable = () => {
                               {order.product_details.map((product, idx) => (
                                 <CTableRow key={idx}>
                                   <CTableDataCell>
-                                    <img style={{ height: "100px", width: "100px" }} src={product.product_id?.photo ? `${base_URL}/productImages/${product.product_id.photo}`: 'defaultImageUrl'} alt={product.product_id?.name ||'Product Image'} />
+                                    <img style={{ height: "100px", width: "100px" }} src={product.product_id?.photo ? `${base_URL}/api/productImages/${product.product_id.photo}`: 'defaultImageUrl'} alt={product.product_id?.name ||'Product Image'} />
                                   </CTableDataCell>
                                   <CTableDataCell>{product.product_id?.name}</CTableDataCell>
                                   <CTableDataCell>{product.quantity}</CTableDataCell>
