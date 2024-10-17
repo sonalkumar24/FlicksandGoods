@@ -248,7 +248,7 @@ const Tables = () => {
                       <CTableDataCell>{item?.genres_id?.name}</CTableDataCell>
                       <CTableDataCell>{item?.name}</CTableDataCell>
                       <CTableDataCell> <textarea style={{ height: "100px" }} readOnly>{item?.movie_details}</textarea> </CTableDataCell>
-                      <CTableDataCell> <img src={`${base_URL}/photo/${item?.photo}`} style={{ borderRadius: "10px", height: "100px", width: "100px" }} alt="No Image" /></CTableDataCell>
+                      <CTableDataCell> <img src={`${base_URL}/api/photo/${item?.photo}`} style={{ borderRadius: "10px", height: "100px", width: "100px" }} alt="No Image" /></CTableDataCell>
                       <CTableDataCell><Link target='_blank' to={item?.video}> <CButton color="success">View</CButton> </Link></CTableDataCell>
                       <CTableDataCell>{moment(item?.release_date).format('L')}</CTableDataCell>
                       <CTableDataCell><ul>{item?.actor_name.map((val) => (

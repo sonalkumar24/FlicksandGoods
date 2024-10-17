@@ -200,7 +200,7 @@ const Tables = () => {
                       <CTableHeaderCell scope="row">{++index}</CTableHeaderCell>
                       <CTableDataCell>{item?.trailer_id?.name}</CTableDataCell>
                       <CTableDataCell>{item?.name}</CTableDataCell>
-                      <CTableDataCell><img style={{ height: "100px", width: "100px" }} src={`${base_URL}/productImages/${item?.photo}`} alt="No Image" /> </CTableDataCell>
+                      <CTableDataCell><img style={{ height: "100px", width: "100px" }} src={`${base_URL}/api/productImages/${item?.photo}`} alt="No Image" /> </CTableDataCell>
                       <CTableDataCell>{item?.price}</CTableDataCell>
                       <CTableDataCell>{item?.description}</CTableDataCell>
                       <CTableDataCell>{item?.color}</CTableDataCell>
