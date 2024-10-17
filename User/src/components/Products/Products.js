@@ -18,7 +18,7 @@ const Products = (props) => {
 
     useEffect(() => {
         const fetchTrending = async () => {
-            await axios.get(`${BaseURL}/products/get/${id}`)
+            await axios.get(`${BaseURL}/api/products/get/${id}`)
                 .then((res) => {
                     setProducts(res?.data?.products);
                 })
@@ -43,7 +43,7 @@ const Products = (props) => {
         try {
             let { _id, price } = pro;
             const res = await axios.post(
-                `${BaseURL}/cart/insert`,
+                `${BaseURL}/api/cart/insert`,
                 { _id, amount: price },
                 { headers: { "auth-token": token } }
             );
@@ -104,7 +104,7 @@ const Products = (props) => {
                                 <img
                                     className={Styles.image}
                                     style={{ height: "200px", width: "100%" }}
-                                    src={pro?.photo ? `${BaseURL}/productImages/${pro?.photo}` : unavailable}
+                                    src={pro?.photo ? `${BaseURL}/api/productImages/${pro?.photo}` : unavailable}
                                     alt={pro.name}
                                 />
                                 <b className={Styles.title}>{pro?.name}</b>

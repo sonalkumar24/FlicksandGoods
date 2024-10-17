@@ -71,7 +71,7 @@ const SingleContent = (props) => {
         <img
           className={Styles.image}
           style={{ height: "200px", width: "100%" }}
-          src={photo ? `${BaseURL}/photo/${photo}` : unavailable}
+          src={photo ? `${BaseURL}/api/photo/${photo}` : unavailable}
           alt={name}
         />
         <b className={Styles.title}>{name}</b>
